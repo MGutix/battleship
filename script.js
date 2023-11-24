@@ -44,11 +44,21 @@ export class Gameboard {
     }
 
     placeShip(y,x,shipLength){
-        const ship = new Ship(shipLength)
+        const submarine = new Ship(shipLength)
         for (let i = 0; i < shipLength; i++) {
             this.board[y-1][x-1+i] = 'X'
         }
         
+        return this.board
+    }
+
+    receiveAttack(y,x){
+        if(this.board[y-1][x-1] === 'X'){
+            //submarine.hit()
+            this.board[y-1][x-1] = 'O'
+        } else{
+            this.board[y-1][x-1] = 'W'
+        }
         return this.board
     }
 

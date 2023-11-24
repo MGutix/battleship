@@ -48,3 +48,16 @@ test('Checks if places row of X', () => {
     expect(board[y-1][x+2]).toBe('X')
 });
 
+test('Hits water || Hits boat', () => {
+    const game = new Gameboard();
+    const x = 2
+    const y = 3
+    const shipSize = 4
+    game.placeShip(y,x,shipSize)
+    const boat = game.receiveAttack(y,x)
+    const water = game.receiveAttack(6,3)
+    
+    
+    expect(boat[y-1][x-1]).toBe('O')
+    expect(water[6-1][3-1]).toBe('W')
+});
