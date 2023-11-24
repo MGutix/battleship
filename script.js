@@ -30,16 +30,25 @@ export class Gameboard {
     newBoard(){
         const board = []
         for(let i = 0; i<10; i++){
-            board.push([])
+            board.push([''])
         }
 
         for(let i = 0; i<board.length; i++){
-            board[i].push([], [], [], [], [], [], [], [], [], [])
+            for (let j = 0; j < board.length-1; j++) {
+                board[i].push([''])
+                
+            }
         }
 
         return board
     }
+
+    placeShip(y,x,shipLength){
+        this.board[y-1][x-1] = 'X'
+        return this.board
+    }
+
 }
 
 export let boat = new Ship(1)
-export let game = new Gameboard([[[],[]],[[],[]]])
+let game = new Gameboard()
