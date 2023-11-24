@@ -44,7 +44,11 @@ export class Gameboard {
     }
 
     placeShip(y,x,shipLength){
-        this.board[y-1][x-1] = 'X'
+        const ship = new Ship(shipLength)
+        for (let i = 0; i < shipLength; i++) {
+            this.board[y-1][x-1+i] = 'X'
+        }
+        
         return this.board
     }
 

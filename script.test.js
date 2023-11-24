@@ -28,9 +28,23 @@ test('Checks if places X on tile', () => {
 const game = new Gameboard();
 const x = 2
 const y = 3
-const board = game.placeShip(y,x)
+const board = game.placeShip(y,x,1)
 
 
 expect(board[y-1][x-1]).toBe('X')
+});
+
+test('Checks if places row of X', () => {
+    const game = new Gameboard();
+    const x = 2
+    const y = 3
+    const shipSize = 4
+    const board = game.placeShip(y,x,shipSize)
+    
+    
+    expect(board[y-1][x-1]).toBe('X')
+    expect(board[y-1][x]).toBe('X')
+    expect(board[y-1][x+1]).toBe('X')
+    expect(board[y-1][x+2]).toBe('X')
 });
 
