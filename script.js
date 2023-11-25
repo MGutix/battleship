@@ -62,6 +62,10 @@ export class Gameboard {
         return this.board
     }
 
+    checkAllSunk(){
+        
+    }
+
 }
 
 export let boat = new Ship(1)
