@@ -63,7 +63,9 @@ export class Gameboard {
     }
 
     checkAllSunk(){
-        
+        if(!this.board.includes('X')){
+            return true
+        }
     }
 
 }
